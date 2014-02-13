@@ -106,6 +106,8 @@ class PHPWord_Writer_Word2007_Base extends PHPWord_Writer_Word2007_WriterPart
                     $this->_writeText($objWriter, $element, true);
                 } elseif ($element instanceof PHPWord_Section_Link) {
                     $this->_writeLink($objWriter, $element, true);
+				} elseif($element instanceof PHPWord_Section_TextBreak) {
+					$objWriter->writeElement('w:br');
                 }
             }
         }
